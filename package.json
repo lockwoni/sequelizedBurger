@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/lockwoni/sequelizedBurger/issues"
   },
+  "engines": {
+    "node": "7.4.0"
+  },
   "homepage": "https://github.com/lockwoni/sequelizedBurger#readme"
 }
