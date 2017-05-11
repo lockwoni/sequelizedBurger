@@ -1,6 +1,4 @@
 // DEPENDENCIES
-//var express = require("express");
-//var router = express.Router();
 var path = require("path");
 var db = require("../models");
 
@@ -12,9 +10,9 @@ module.exports = function(app) {
 	app.get("/", function(req, res) {
 		// Pulling all of the burger data
 		db.Burger.findAll()
-		.then(function(data) {
+		.then(function(dbBurger) {
 			var burgerObj = {
-				burger: data 
+				burger: dbBurger 
 			};
 			console.log(burgerObj);
 			res.render("index", burgerObj);
@@ -26,9 +24,9 @@ module.exports = function(app) {
 		db.Burger.create({
 			burger_name: req.body.burger_name
 		})
-		.then(function(data) {
+		.then(function(dbBurger) {
 			 // Redirecting to the home page so that the newly added burger is displayed
-			console.log(data);
+			console.log(dbBurger);
 
 			res.redirect("/");
 		});
@@ -44,8 +42,8 @@ module.exports = function(app) {
 			where: {
 				id: req.params.id
 			}
-		}).then(function(data) {
-			console.log(data);
+		}).then(function(dbBurger) {
+			console.log(dbBurger);
 
 			res.redirect("/");
 		});
