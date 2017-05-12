@@ -5,13 +5,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        len: [2]
       }
     },
     devoured: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
+    },
+  },
+    {
+      timestamps: true,
+      createdAt: "created_at",
+      updatedAt: false
     }
-  });
+  );
   return Burger;
 };
