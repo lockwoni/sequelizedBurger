@@ -14,6 +14,18 @@ module.exports = function(sequelize, DataTypes) {
     },
   },
     {
+      classMethods: {
+        // Joining the Customers & Burgers tables
+        associate: function(models) {
+          Burger.belongsTo(models.Customer, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+        }
+      }
+    },
+    {
       timestamps: true,
       createdAt: "created_at",
       updatedAt: false
