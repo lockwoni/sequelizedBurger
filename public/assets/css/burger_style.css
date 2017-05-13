@@ -16,7 +16,7 @@ body {
 	font-size: 60px;
 }
 
-.burger-text {
+.burger-text, .customer-text {
 	font-family: 'Love Ya Like A Sister', cursive;
 }
 
