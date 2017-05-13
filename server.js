@@ -37,7 +37,7 @@ app.set("view engine", "handlebars");
 require("./controllers/burgers_controller.js")(app);
 
 // Syncing the sequelize models and then starting the express app
-db.sequelize.sync({force: true}).then( function() {
+db.sequelize.sync().then( function() {
 	app.listen(PORT, function() {
 	  console.log("Listening on PORT " + PORT);
 	});
